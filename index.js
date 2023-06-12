@@ -10,12 +10,13 @@ app.use(cors());
 app.use("/users", userRouter);
 app.use(Auth);
 app.use("/posts", postRouter);
+const PORT = 4200;
 
 app.listen(process.env.PORT, async () => {
   try {
     await connection;
     console.log("Connect to DB!");
-    console.log(`Server is running on port ${process.env.PORT}`);
+    console.log(`Server is running on port ${PORT}`);
   } catch (error) {
     console.log(error);
     console.log("Something wrong!");
